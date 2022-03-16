@@ -16,6 +16,8 @@ export function networkToRpc(network: SupportedNetworks, nodeProvider?: 'infura'
       return `https://kovan.infura.io/v3/${process.env.INFURA_KEY}`;
     case SupportedNetworks.TESTNET:
       return 'http://localhost:2000';
+    case SupportedNetworks.APOTHEM:
+      return 'https://rpc-apothem.xinfin.yodaplus.net';
     default:
       if (nodeProvider === 'alchemy') {
         return `https://eth-mainnet.alchemyapi.io/v2/${process.env.ALCHEMY_KEY}`;

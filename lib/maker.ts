@@ -20,6 +20,8 @@ function chainIdToNetworkName(chainId: number): SupportedNetworks {
       return SupportedNetworks.GOERLI;
     case 42:
       return SupportedNetworks.KOVAN;
+    case 51:
+      return SupportedNetworks.APOTHEM;
     case 999:
       return SupportedNetworks.TESTNET;
     case 1337:
