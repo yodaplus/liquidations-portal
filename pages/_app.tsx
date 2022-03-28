@@ -15,7 +15,6 @@ import { mixpanelInit } from 'lib/analytics';
 import { fetchJson } from 'lib/utils';
 import theme from 'lib/theme';
 import Header from 'components/shared/Header';
-import Banner from 'components/shared/Banner';
 
 const vitalslog = debug('liqpo:vitals');
 
@@ -76,7 +75,6 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
             }
           }}
         />
-        <Banner />
         <Flex
           sx={{
             position: 'relative',
