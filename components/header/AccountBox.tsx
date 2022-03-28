@@ -4,7 +4,7 @@ import { Icon } from '@makerdao/dai-ui-icons';
 import { ConnectorName } from '../../lib/maker/web3react';
 import { useBreakpointIndex } from '@theme-ui/match-media';
 
-import { formatAddress, getEtherscanLink } from '../../lib/utils';
+import { formatAddress, getEtherscanLink, ethToXdcAddress } from '../../lib/utils';
 import { getNetwork } from '../../lib/maker';
 import AddressIcon from './AddressIcon';
 
@@ -68,7 +68,7 @@ const AccountBox = ({ address, accountName, change }: Props): JSX.Element => {
             }
           }}
           onClick={() => {
-            navigator.clipboard.writeText(address);
+            navigator.clipboard.writeText(ethToXdcAddress(address));
             setCopyAddressText('Copied!');
             setTimeout(() => setCopyAddressText('Copy Address'), 1000);
           }}

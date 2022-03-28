@@ -116,76 +116,6 @@ const AccountSelect = props => {
     }
   };
 
-  const LedgerButton = () => {
-    const [loading, setLoading] = useState(false);
-    return (
-      <Flex
-        sx={walletButtonStyle}
-        onClick={async () => {
-          setLoading(true);
-          const maker = await getMaker();
-
-          try {
-            await maker.addAccount({
-              type: 'ledger',
-              accountsLength: 10,
-              choose: (addresses, callback) => {
-                setLoading(false);
-                setAddresses(addresses);
-                setShowHwAddressSelector(true);
-                setHwSelectCallback(() => callback);
-              }
-            });
-          } catch (err) {
-            if (err.message !== 'already added') throw err;
-          }
-          if (chainId) mixpanel.people.set({ wallet: name });
-          setAccountName('Ledger');
-          setChangeWallet(false);
-          setShowHwAddressSelector(false);
-          close();
-        }}
-      >
-        <Icon name="Ledger" />
-        <Text sx={{ ml: 3 }}>{loading ? 'Loading...' : 'Ledger'}</Text>
-      </Flex>
-    );
-  };
-
-  const TrezorButton = () => (
-    <Flex
-      sx={walletButtonStyle}
-      onClick={async () => {
-        const maker = await getMaker();
-
-        try {
-          await maker.addAccount({
-            type: 'trezor',
-            accountsLength: 10,
-            accountsOffset: 0,
-            path: "44'/60'/0'/0/0",
-            choose: (addresses, callback) => {
-              setAddresses(addresses);
-              setShowHwAddressSelector(true);
-              setHwSelectCallback(() => callback);
-            }
-          });
-        } catch (err) {
-          if (err.message.match(/Popup closed/)) return;
-          if (err.message !== 'already added') throw err;
-        }
-
-        if (chainId) mixpanel.people.set({ wallet: name });
-        setAccountName('Trezor');
-        setChangeWallet(false);
-        close();
-      }}
-    >
-      <Icon name="Trezor" />
-      <Text sx={{ ml: 3 }}>Trezor</Text>
-    </Flex>
-  );
-
   const walletOptions = connectors
     .map(([name, connector]) => (
       <Flex
@@ -203,7 +133,7 @@ const AccountSelect = props => {
         <Text sx={{ ml: 3 }}>{name}</Text>
       </Flex>
     ))
-    .concat([<TrezorButton key="trezor" />, <LedgerButton key="ledger" />]);
+    .concat([]);
 
   const BackButton = ({ onClick }) => (
     <Flex sx={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>

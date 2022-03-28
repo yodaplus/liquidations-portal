@@ -52,15 +52,15 @@ export function getEtherscanLink(
   type: 'transaction' | 'address'
 ): string {
   const prefix = `https://${
-    ETHERSCAN_PREFIXES[network] || ETHERSCAN_PREFIXES[SupportedNetworks.MAINNET]
-  }etherscan.io`;
+    ETHERSCAN_PREFIXES[network] || ETHERSCAN_PREFIXES[SupportedNetworks.APOTHEM]
+  }blocksscan.io`;
 
   switch (type) {
     case 'transaction':
-      return `${prefix}/tx/${data}`;
+      return `${prefix}/txs/${data}`;
     case 'address':
     default:
-      return `${prefix}/address/${data}`;
+      return `${prefix}/address/${ethToXdcAddress(data)}`;
   }
 }
 
@@ -124,8 +124,17 @@ function now() {
   return Math.floor(new Date().getTime());
 }
 
+export function ethToXdcAddress(address: string) {
+  return address.replace(/^0x/, 'xdc');
+}
+
+export function xdcToEthAddress(address: string) {
+  return address.replace(/^xdc/, '0x');
+}
+
 export function formatAddress(address: string) {
-  return address.slice(0, 7) + '...' + address.slice(-4);
+  address = ethToXdcAddress(address);
+  return address.slice(0, 8) + '...' + address.slice(-4);
 }
 
 export function cutMiddle(text = '', left = 6, right = 4) {

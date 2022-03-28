@@ -5,15 +5,15 @@ export enum SupportedNetworks {
   GOERLI = 'goerli',
   KOVAN = 'kovan',
   TESTNET = 'testnet',
-  APOTHEM = 'apothem'
+  APOTHEM = 'apothem',
+  XINFIN_MAINNET = 'xinfin-mainnet'
 }
 
 export const DEFAULT_NETWORK = SupportedNetworks.APOTHEM;
 
 export const ETHERSCAN_PREFIXES = {
-  [SupportedNetworks.MAINNET]: '',
-  [SupportedNetworks.KOVAN]: 'kovan.',
-  [SupportedNetworks.GOERLI]: 'goerli.'
+  [SupportedNetworks.XINFIN_MAINNET]: 'xdc.',
+  [SupportedNetworks.APOTHEM]: 'apothem.'
 };
 
 type CollateralInfo = {
