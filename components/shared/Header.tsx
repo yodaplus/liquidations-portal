@@ -61,8 +61,8 @@ const Header = (): JSX.Element => {
         }}
       >
         <Link href={{ pathname: '/', query: { network } }}>
-          <IconButton aria-label="Maker home" sx={{ width: '40px', height: 4, p: 0 }}>
-            <Icon name="maker" size="40px" sx={{ cursor: 'pointer' }} />
+          <IconButton aria-label="Home" sx={{ height: '40px', width: '150px', p: 0 }}>
+            <Icon name="yodaplus" sx={{ width: 'auto', height: 'auto', cursor: 'pointer' }} />
           </IconButton>
         </Link>
         <Flex sx={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>

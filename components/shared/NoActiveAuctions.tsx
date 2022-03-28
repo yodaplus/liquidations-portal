@@ -20,10 +20,11 @@ const NoActiveAuctions = ({ error }: Props): JSX.Element => (
   >
     <Box>
       <Icon
-        name="maker"
+        name="xdc"
         size={5}
         sx={{
           p: 2,
+          filter: 'grayscale(1)',
           color: 'textSecondary',
           border: '2px dashed #D8E0E3',
           borderRadius: '50%'
