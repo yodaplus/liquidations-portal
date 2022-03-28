@@ -72,23 +72,6 @@ export default function SystemStatsSidebar({ ilk }: Props): JSX.Element {
             <Badge variant="circle" p="3px" mr="3" />
             <Text sx={{ fontSize: 5, fontWeight: 'semiBold' }}>System Stats</Text>
           </Flex>
-          <ExternalLink href="https://daistats.com/" target="_blank">
-            <Flex sx={{ alignItems: 'center' }}>
-              <Text
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  color: 'text',
-                  fontSize: [2, 3],
-                  fontWeight: 'semiBold',
-                  ':hover': { color: 'blueLinkHover' }
-                }}
-              >
-                See all
-                <Icon ml={2} name="arrowTopRight" size="2" color="primary" />
-              </Text>
-            </Flex>
-          </ExternalLink>
         </Flex>
         <Card variant="compact">
           <Stack gap={3}>

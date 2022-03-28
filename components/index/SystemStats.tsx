@@ -67,23 +67,6 @@ export default function SystemStats(): JSX.Element {
                 <Badge variant="circle" p="3px" mr="3" />
                 <Text sx={{ fontSize: 5, fontWeight: 'semiBold' }}>System Stats</Text>
               </Flex>
-              <ExternalLink href="https://daistats.com/" target="_blank">
-                <Flex sx={{ alignItems: 'center' }}>
-                  <Text
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      color: 'text',
-                      fontSize: [2, 3],
-                      fontWeight: 'semiBold',
-                      ':hover': { color: 'blueLinkHover' }
-                    }}
-                  >
-                    View more
-                    <Icon ml={2} name="arrowTopRight" size="2" color="primary" />
-                  </Text>
-                </Flex>
-              </ExternalLink>
             </>
           ) : (
             <Flex sx={{ alignItems: 'center' }}>
@@ -130,14 +113,6 @@ export default function SystemStats(): JSX.Element {
         <Grid sx={{ p: 3 }}>
           <Flex sx={{ flexDirection: 'row', justifyContent: 'space-between', mb: 3 }}>
             <Text sx={{ fontSize: 3, fontWeight: 'semiBold', color: 'text' }}>System Stats</Text>
-            <ExternalLink href="https://daistats.com/" target="_blank">
-              <Flex sx={{ alignItems: 'center' }}>
-                <Text sx={{ fontSize: 3, color: 'text', fontWeight: 'semiBold' }}>
-                  View more
-                  <Icon ml="2" name="arrowTopRight" size="2" color="primary" />
-                </Text>
-              </Flex>
-            </ExternalLink>
           </Flex>
           <Stack gap={3}>
             {statData.map(stat => {
