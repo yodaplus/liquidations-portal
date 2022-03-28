@@ -6,7 +6,6 @@ import { useRouter } from 'next/router';
 import BigNumber from 'bignumber.js';
 
 import SystemStatsSidebar from 'components/shared/SystemStatsSidebar';
-import ResourceBox from 'components/shared/ResourceBox';
 import SidebarLayout from 'components/layouts/Sidebar';
 import PrimaryLayout from 'components/layouts/Primary';
 import AuctionOverviewCard from 'components/auctions/AuctionOverviewCard';
@@ -233,7 +232,6 @@ export default function Auctions(): JSX.Element | null {
           </Stack>
           <Stack gap={3}>
             <SystemStatsSidebar ilk={ilk} />
-            <ResourceBox />
           </Stack>
         </SidebarLayout>
       </PrimaryLayout>
