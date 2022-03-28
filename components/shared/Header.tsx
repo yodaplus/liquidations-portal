@@ -108,19 +108,6 @@ const Header = (): JSX.Element => {
             </MenuButton>
           </Menu>
 
-          <Link href={{ pathname: '/education', query: { network } }} passHref>
-            <NavLink
-              p={0}
-              sx={{
-                display: ['none', 'block'],
-                ml: [0, 2, 4],
-                color: router?.asPath?.startsWith('/education') ? 'primary' : undefined
-              }}
-            >
-              Education
-            </NavLink>
-          </Link>
-
           {address && (
             <Button
               aria-label="Deposit or Withdraw Dai"
