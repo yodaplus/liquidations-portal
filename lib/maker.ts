@@ -1,10 +1,10 @@
-import Maker from '@makerdao/dai';
-import McdPlugin, { DAI } from '@makerdao/dai-plugin-mcd';
+import Maker from '@yodaplus/dai';
+import McdPlugin, { DAI } from '@yodaplus/dai-plugin-mcd';
 import LedgerPlugin from '@makerdao/dai-plugin-ledger-web';
 import TrezorPlugin from '@makerdao/dai-plugin-trezor-web';
 import { Web3ReactPlugin } from './maker/web3react';
-import LiquidationPlugin from '@makerdao/dai-plugin-liquidations';
-import { MakerClass } from '@makerdao/dai/dist/Maker';
+import LiquidationPlugin from '@yodaplus/dai-plugin-liquidations';
+import { MakerClass } from '@yodaplus/dai/dist/Maker';
 
 import { SupportedNetworks, DEFAULT_NETWORK } from './constants';
 import { networkToRpc } from './maker/network';

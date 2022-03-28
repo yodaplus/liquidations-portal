@@ -14,10 +14,10 @@
     "lint": "eslint --ext .tsx,.ts pages/ components/ lib/ stores/ types/"
   },
   "dependencies": {
-    "@makerdao/dai": "^0.42.3-alpha.0",
+    "@yodaplus/dai": "^0.42.6",
     "@makerdao/dai-plugin-ledger-web": "^0.9.10",
-    "@makerdao/dai-plugin-liquidations": "^0.3.4-alpha.2",
-    "@makerdao/dai-plugin-mcd": "^1.8.4-alpha.0",
+    "@yodaplus/dai-plugin-liquidations": "^0.3.7",
+    "@yodaplus/dai-plugin-mcd": "^1.8.7",
     "@makerdao/dai-plugin-trezor-web": "^0.9.7",
     "@makerdao/dai-ui-icons": "^0.0.66",
     "@makerdao/dai-ui-icons-branding": "^0.0.66",
