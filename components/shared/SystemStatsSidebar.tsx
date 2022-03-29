@@ -37,13 +37,13 @@ export default function SystemStatsSidebar({ ilk }: Props): JSX.Element {
       tooltip: TOOLTIP_DICT.INACTIVE_AUCTIONS
     },
     {
-      title: 'Dai required for Auctions',
-      format: val => `${getDaiRequiredForAuctions(val).toFormat(0)} DAI`,
+      title: 'USX required for Auctions',
+      format: val => `${getDaiRequiredForAuctions(val).toFormat(0)} USX`,
       tooltip: TOOLTIP_DICT.DAI_REQUIRED
     },
     {
       title: 'Limit per collateral available',
-      format: val => `${val && val.diff ? val.diff.toFormat(2) : '--'} DAI`,
+      format: val => `${val && val.diff ? val.diff.toFormat(2) : '--'} USX`,
       tooltip: TOOLTIP_DICT.MAX_AVAILABLE
     }
   ];

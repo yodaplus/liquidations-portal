@@ -6,7 +6,7 @@ export function useSystemStats(): any {
   const { data: totalDai, error: totalDaiError } = useGlobalMax();
 
   // return data needed for each field in fieldMap and let format function do the rest
-  // ['Active Auctions', 'Inactive Auctions', 'Vaults requiring kick', 'Dai required for Auctions', 'Global max available']
+  // ['Active Auctions', 'Inactive Auctions', 'Vaults requiring kick', 'USX required for Auctions', 'Global max available']
   const data = auctions && totalDai ? [auctions, auctions, auctions, totalDai] : null;
   const error = auctionsError || totalDaiError;
 
@@ -23,7 +23,7 @@ export function useSystemStatsSidebar(ilk: string): any {
   const { data: holeAndDirt, error: holeAndDirtError } = useHoleAndDirt(ilk);
 
   // return data needed for each field in fieldMap and let format function do the rest
-  // ['Undercollateralized Vaults', 'Active Auctions', 'Inactive Auctions', 'Dai required for Auctions', 'Limit per collateral available']
+  // ['Undercollateralized Vaults', 'Active Auctions', 'Inactive Auctions', 'USX required for Auctions', 'Limit per collateral available']
   const data = auctions ? [auctions, auctions, auctions, holeAndDirt] : null;
   const error = auctionsError || holeAndDirtError;
 

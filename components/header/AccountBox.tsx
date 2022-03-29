@@ -97,7 +97,7 @@ const AccountBox = ({ address, accountName, change }: Props): JSX.Element => {
             }
           }}
         >
-          View on Etherscan
+          View on Blocksscan
           <Icon name="arrowTopRight" size={2} sx={{ ml: 1 }} />
         </ExternalLink>
       </Flex>
