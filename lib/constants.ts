@@ -53,7 +53,7 @@ export const COLLATERAL_MAP: Record<string, CollateralInfo> = {
     cardTexturePng: '/assets/eth-card-texture.png',
     bannerPng: '/assets/eth-banner-texture.png',
     iconSvg: '/assets/eth-icon.svg',
-    colorIconName: 'ethCircleColor',
+    colorIconName: 'xdc',
     decimals: 18
   }
 };

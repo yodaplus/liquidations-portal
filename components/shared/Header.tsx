@@ -129,7 +129,7 @@ const Header = (): JSX.Element => {
             >
               <Flex sx={{ alignItems: 'center' }}>
                 <Text>{bigNumToFormat(vatBalance, 'DAI')}</Text>
-                <Icon name="dai" size="16px" sx={{ mx: [0, 2] }} />
+                <Icon name="usx" size="16px" sx={{ mx: [0, 2] }} />
                 <Text sx={{ display: ['none', 'block'] }}>Deposit/Withdraw</Text>
               </Flex>
             </Button>

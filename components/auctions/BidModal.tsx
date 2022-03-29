@@ -303,7 +303,7 @@ const BidModal = ({
                         max
                       </Button>
                       <Flex sx={{ alignItems: 'center', ml: 1 }}>
-                        <Icon size={30} name="daiCircleColor" />
+                        <Icon size={30} name="usx" />
                         <Text sx={{ fontSize: 3, fontWeight: 'semiBold', ml: 2 }}>USX</Text>
                       </Flex>
                     </Flex>
