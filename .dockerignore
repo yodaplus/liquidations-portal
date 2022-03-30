@@ -1,0 +1,6 @@
+.git
+.github
+.gitignore
+.pre-commit*
+codecov.yml
+node_modules

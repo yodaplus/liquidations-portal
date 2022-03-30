@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: 135135176603.dkr.ecr.ap-south-1.amazonaws.com/liquidations-portal-nginx:latest
+
+  app:
+    image: 135135176603.dkr.ecr.ap-south-1.amazonaws.com/liquidations-portal-app:latest

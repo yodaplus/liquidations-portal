@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  nginx:
+    depends_on:
+      - app
+    ports:
+      - '80:80'
+      - '443:443'
+
+  app:
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 4Gb
