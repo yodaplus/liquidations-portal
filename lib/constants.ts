@@ -55,6 +55,28 @@ export const COLLATERAL_MAP: Record<string, CollateralInfo> = {
     iconSvg: '/assets/eth-icon.svg',
     colorIconName: 'xdc',
     decimals: 18
+  },
+  'XDC-B': {
+    name: 'XDC',
+    ilk: 'XDC-B',
+    symbol: 'XDC',
+    bigNumFormatter: (val: BigNumber): string => val.toFormat(6),
+    cardTexturePng: '/assets/eth-card-texture.png',
+    bannerPng: '/assets/eth-banner-texture.png',
+    iconSvg: '/assets/eth-icon.svg',
+    colorIconName: 'xdc',
+    decimals: 18
+  },
+  'XDC-C': {
+    name: 'XDC',
+    ilk: 'XDC-C',
+    symbol: 'XDC',
+    bigNumFormatter: (val: BigNumber): string => val.toFormat(6),
+    cardTexturePng: '/assets/eth-card-texture.png',
+    bannerPng: '/assets/eth-banner-texture.png',
+    iconSvg: '/assets/eth-icon.svg',
+    colorIconName: 'xdc',
+    decimals: 18
   }
 };
 
