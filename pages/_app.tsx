@@ -7,6 +7,7 @@ import { ThemeProvider, Flex } from 'theme-ui';
 import { Global } from '@emotion/core';
 import mixpanel from 'mixpanel-browser';
 import debug from 'debug';
+import { Web3ReactProvider } from '@web3-react/core';
 
 import '@reach/dialog/styles.css';
 import '@reach/tooltip/styles.css';
@@ -14,6 +15,7 @@ import '@reach/tooltip/styles.css';
 import { mixpanelInit } from 'lib/analytics';
 import { fetchJson } from 'lib/utils';
 import theme from 'lib/theme';
+import { getLibrary } from 'lib/maker/web3react';
 import Header from 'components/shared/Header';
 
 const vitalslog = debug('liqpo:vitals');
@@ -38,9 +40,10 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   }, []);
   return (
     <ThemeProvider theme={theme}>
-      <Head>
-        {/* TODO: come back to this/ */}
-        {/* <meta
+      <Web3ReactProvider getLibrary={getLibrary}>
+        <Head>
+          {/* TODO: come back to this/ */}
+          {/* <meta
           httpEquiv="Content-Security-Policy"
           content={
             "default-src 'none';" +
@@ -52,41 +55,42 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
             "img-src 'self' https: data:"
           }
         /> */}
-        <meta
-          name="description"
-          content="Allowing ecosystem actors to view and participate in MakerDAO collateral liquidation auctions."
-        />
-      </Head>
+          <meta
+            name="description"
+            content="Allowing ecosystem actors to view and participate in MakerDAO collateral liquidation auctions."
+          />
+        </Head>
 
-      <SWRConfig
-        value={{
-          refreshInterval: 10000,
-          fetcher: url => fetchJson(url)
-        }}
-      >
-        <Global
-          styles={{
-            '*': {
-              WebkitFontSmoothing: 'antialiased',
-              MozOsxFontSmoothing: 'grayscale'
-            },
-            body: {
-              backgroundColor: theme.colors.background
-            }
-          }}
-        />
-        <Flex
-          sx={{
-            position: 'relative',
-            flexDirection: 'column',
-            variant: 'layout.root',
-            px: [3, 4]
+        <SWRConfig
+          value={{
+            refreshInterval: 10000,
+            fetcher: url => fetchJson(url)
           }}
         >
-          <Header />
-          <Component {...pageProps} />
-        </Flex>
-      </SWRConfig>
+          <Global
+            styles={{
+              '*': {
+                WebkitFontSmoothing: 'antialiased',
+                MozOsxFontSmoothing: 'grayscale'
+              },
+              body: {
+                backgroundColor: theme.colors.background
+              }
+            }}
+          />
+          <Flex
+            sx={{
+              position: 'relative',
+              flexDirection: 'column',
+              variant: 'layout.root',
+              px: [3, 4]
+            }}
+          >
+            <Header />
+            <Component {...pageProps} />
+          </Flex>
+        </SWRConfig>
+      </Web3ReactProvider>
     </ThemeProvider>
   );
 };

@@ -49,11 +49,7 @@ const closeButtonStyle: ThemeUICSSObject = {
   left: '8px'
 };
 
-const WrappedAccountSelect = (props): JSX.Element => (
-  <Web3ReactProvider getLibrary={getLibrary}>
-    <AccountSelect {...props} />
-  </Web3ReactProvider>
-);
+const WrappedAccountSelect = (props): JSX.Element => <AccountSelect {...props} />;
 
 const AccountSelect = props => {
   const { library, account: w3rAddress, activate, connector, error, chainId } = useWeb3React();

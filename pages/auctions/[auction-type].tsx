@@ -1,9 +1,10 @@
 /** @jsx jsx */
 import Head from 'next/head';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { Button, Heading, Image, Text, Box, Flex, jsx } from 'theme-ui';
 import { useRouter } from 'next/router';
 import BigNumber from 'bignumber.js';
+import { useWeb3React } from '@web3-react/core';
 
 import SystemStatsSidebar from 'components/shared/SystemStatsSidebar';
 import SidebarLayout from 'components/layouts/Sidebar';
@@ -15,7 +16,7 @@ import Stack from 'components/layouts/Stack';
 import { COLLATERAL_MAP } from 'lib/constants';
 import getMaker from 'lib/maker';
 import { getAuctionsByStatus } from 'lib/utils';
-import { useAuctions, useVatGemBalance, useAccountVatBalance } from 'lib/hooks';
+import { useAuctions, useVatGemBalance, useAccountVatBalance, useGemAddress } from 'lib/hooks';
 import { transactionsApi } from 'stores/transactions';
 import useAccountsStore from 'stores/accounts';
 
@@ -41,6 +42,35 @@ export default function Auctions(): JSX.Element | null {
 
   // tx processing state
   const [isTxProcessing, setIsTxProcessing] = useState(false);
+
+  const { data: gemData } = useGemAddress(ilkData?.ilk);
+
+  const { library } = useWeb3React();
+  const provider = library?.provider;
+
+  const callWatchAsset = useCallback(() => {
+    const { address, symbol, decimals } = gemData ?? {};
+
+    if (!provider || !address) {
+      return;
+    }
+
+    (provider as any).sendAsync(
+      {
+        jsonrpc: '2.0',
+        method: 'metamask_watchAsset',
+        params: {
+          type: 'ERC20',
+          options: {
+            address: address,
+            symbol: symbol,
+            decimals: decimals
+          }
+        } as any
+      },
+      () => {} // eslint-disable-line
+    );
+  }, [provider, gemData]);
 
   // TODO: add error state here if true
   if (!ilkData) return null;
@@ -167,8 +197,13 @@ export default function Auctions(): JSX.Element | null {
           <Stack gap={5}>
             <Box>
               <Stack gap={2}>
-                <Flex sx={{ justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
+                <Flex sx={{ justifyContent: 'flex-start', alignItems: 'center', mb: 3 }}>
                   <Heading as="h2">{`Active ${type?.toUpperCase()} Auctions`}</Heading>
+                  {provider && (
+                    <Text sx={{ cursor: 'pointer', color: 'textSecondary', ml: 3 }} onClick={callWatchAsset}>
+                      Add wrapped token to wallet
+                    </Text>
+                  )}
                   {vatGemBalance && vatGemBalance.gt(Math.pow(10, -decimals)) && (
                     <Button
                       sx={{
@@ -178,7 +213,8 @@ export default function Auctions(): JSX.Element | null {
                           color: 'text',
                           borderColor: 'onSecondary',
                           backgroundColor: 'white'
-                        }
+                        },
+                        ml: 'auto'
                       }}
                       onClick={() => redeemCollateral(ilk)}
                       disabled={isTxProcessing}

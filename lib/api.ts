@@ -2,6 +2,7 @@ import getMaker from 'lib/maker';
 import BigNumber from 'bignumber.js';
 import { COLLATERAL_MAP } from 'lib/constants';
 import { ethers } from 'ethers';
+import wrappedTokenAbi from '@yodaplus/dai/dist/abis/WETH9.json';
 
 //as the number of ilks grows, this calculation will require a lot of calls.
 //should think about how to deal with that.
@@ -43,6 +44,24 @@ export async function getVatGemBalance(ilk?: string, address?: string): Promise<
     .service('smartContract')
     .getContract('MCD_VAT')
     .gem(ethers.utils.formatBytes32String(ilk), address);
+}
+
+export async function getGemAddress(
+  ilk?: string
+): Promise<{ address?: string; symbol?: string; decimals?: number }> {
+  if (!ilk) return {};
+
+  const suffix = ilk.replace('-', '_');
+
+  const maker = await getMaker();
+
+  const address = await maker.service('smartContract').getContractByName(`MCD_JOIN_${suffix}`).gem();
+  const contract = maker
+    .service('smartContract')
+    .getContractByAddressAndAbi(address, wrappedTokenAbi, { name: 'WrappedToken' });
+  const [symbol, decimals] = await Promise.all([contract.symbol(), contract.decimals()]);
+
+  return { address, symbol, decimals };
 }
 
 export async function getAccountVatBalance(address?: string): Promise<any> {
