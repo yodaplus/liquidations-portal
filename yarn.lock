@@ -3591,10 +3591,10 @@
     bignumber.js "^8.1.1"
     ramda "^0.27.1"
 
-"@yodaplus/dai-plugin-mcd@^1.8.8":
-  version "1.8.8"
-  resolved "https://registry.yarnpkg.com/@yodaplus/dai-plugin-mcd/-/dai-plugin-mcd-1.8.8.tgz#8ed248195a6a8992ca1f005f2a540661a34b5cc1"
-  integrity sha512-j0iw4AXSyVEKFRFx4oR0th7uv12EON+sdeHnj/ptihEMxch6tRXLJYvSN5Lzc5RhF742KMSqWFX2KaQoheukaA==
+"@yodaplus/dai-plugin-mcd@^1.8.9":
+  version "1.8.9"
+  resolved "https://registry.yarnpkg.com/@yodaplus/dai-plugin-mcd/-/dai-plugin-mcd-1.8.9.tgz#f5fd65615ba40421736e1fbfc4924999153b344d"
+  integrity sha512-do03g0SUdUjRzlUZ0XVhrLe5YnTdlP2aT/RfWGEIXNnbIHoMCfPLiTdx7b9z3UyBb9BnJjVLbVSYpbwrM/pF7w==
   dependencies:
     "@makerdao/currency" "^0.9.10"
     "@yodaplus/dai" "^0.42.6"
