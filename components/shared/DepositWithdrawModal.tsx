@@ -98,12 +98,12 @@ const DepositWithdrawModal = ({ showDialog, onDismiss, mobile }: Props): JSX.Ele
     return (
       <>
         <Text sx={{ color: 'secondaryEmphasis', mb: 2 }}>
-          To participate in auctions you need to sign the approval transactions below and move USX that will
+          To participate in auctions you need to sign the approval transactions below and move USXD that will
           be used for bidding to the VAT
         </Text>
         <Divider sx={{ width: '100%' }} />
         <Flex sx={{ justifyContent: 'space-between', my: 2 }}>
-          <Text sx={{ fontWeight: 'semiBold' }}>USX Wallet Balance</Text>
+          <Text sx={{ fontWeight: 'semiBold' }}>USXD Wallet Balance</Text>
           <Text>{bigNumToFormat(daiBalance, 'DAI')}</Text>
         </Flex>
         <Divider sx={{ width: '100%', mb: 3 }} />
@@ -111,7 +111,7 @@ const DepositWithdrawModal = ({ showDialog, onDismiss, mobile }: Props): JSX.Ele
         <Stack gap={4} sx={{ mt: 4 }}>
           <Box>
             <Flex sx={{ justifyContent: 'space-between', my: 2 }}>
-              <Text sx={{ fontWeight: 'semiBold' }}>USX in the VAT</Text>
+              <Text sx={{ fontWeight: 'semiBold' }}>USXD in the VAT</Text>
               <Text>{bigNumToFormat(vatBalance, 'DAI')}</Text>
             </Flex>
             <Button
@@ -120,21 +120,21 @@ const DepositWithdrawModal = ({ showDialog, onDismiss, mobile }: Props): JSX.Ele
               disabled={hasJoinDaiApproval || joinDaiApprovalPending}
               variant={hasJoinDaiApproval || joinDaiApprovalPending ? 'outline' : 'primary'}
             >
-              {!hasJoinDaiApproval && !joinDaiApprovalPending && 'Unlock USX in the VAT'}
+              {!hasJoinDaiApproval && !joinDaiApprovalPending && 'Unlock USXD in the VAT'}
               {joinDaiApprovalPending && (
                 <Flex sx={{ justifyContent: 'center', alignItems: 'center' }}>
-                  Unlocking USX in the VAT <Spinner size={20} ml={2} />
+                  Unlocking USXD in the VAT <Spinner size={20} ml={2} />
                 </Flex>
               )}
               {hasJoinDaiApproval && (
                 <Flex sx={{ justifyContent: 'center', alignItems: 'center' }}>
-                  USX in the VAT Unlocked <Icon name="checkmark" color="primary" ml={2} />
+                  USXD in the VAT Unlocked <Icon name="checkmark" color="primary" ml={2} />
                 </Flex>
               )}
             </Button>
             {!(hasJoinDaiApproval || joinDaiApprovalPending) && (
               <Text sx={{ color: 'textSecondary', textAlign: 'center', mt: 2 }}>
-                This action allows you to deposit USX into the VAT
+                This action allows you to deposit USXD into the VAT
               </Text>
             )}
           </Box>
@@ -154,7 +154,7 @@ const DepositWithdrawModal = ({ showDialog, onDismiss, mobile }: Props): JSX.Ele
               )}
             </Button>
             <Text sx={{ color: 'textSecondary', textAlign: 'center', mt: 2 }}>
-              This action allows the VAT to use the USX you have deposited
+              This action allows the VAT to use the USXD you have deposited
             </Text>
           </Box>
         </Stack>
@@ -196,13 +196,13 @@ const DepositWithdrawModal = ({ showDialog, onDismiss, mobile }: Props): JSX.Ele
         ? () => maker.service('liquidation').joinDaiToAdapter(value)
         : () => maker.service('liquidation').exitDaiFromAdapter(value);
 
-      await transactionsApi.getState().track(txCreator, `${isDeposit ? 'Depositing' : 'Withdrawing'} USX`, {
+      await transactionsApi.getState().track(txCreator, `${isDeposit ? 'Depositing' : 'Withdrawing'} USXD`, {
         pending: () => {
           setIsTxProcessing(true);
           setIsTxError(null);
         },
         mined: txId => {
-          transactionsApi.getState().setMessage(txId, `${isDeposit ? 'Deposit' : 'Withdraw'} USX finished`);
+          transactionsApi.getState().setMessage(txId, `${isDeposit ? 'Deposit' : 'Withdraw'} USXD finished`);
           onDismiss();
         },
         error: (txId, error, hash) => {
@@ -251,12 +251,12 @@ const DepositWithdrawModal = ({ showDialog, onDismiss, mobile }: Props): JSX.Ele
     ) : (
       <>
         <Text sx={{ color: 'secondaryEmphasis', mb: 2 }}>
-          You can deposit USX in the VAT here. This is the USX that you will be able to use for bidding on
+          You can deposit USXD in the VAT here. This is the USXD that you will be able to use for bidding on
           auctions.
         </Text>
         <Divider sx={{ width: '100%' }} />
         <Flex sx={{ justifyContent: 'space-between', my: 2 }}>
-          <Text sx={{ fontWeight: 'semiBold' }}>USX Wallet Balance</Text>
+          <Text sx={{ fontWeight: 'semiBold' }}>USXD Wallet Balance</Text>
           <Text>{bigNumToFormat(daiBalance, 'DAI')}</Text>
         </Flex>
         <Divider sx={{ width: '100%', mb: 3 }} />
@@ -277,7 +277,7 @@ const DepositWithdrawModal = ({ showDialog, onDismiss, mobile }: Props): JSX.Ele
             }}
             onClick={() => setIsDeposit(!isDeposit)}
           >
-            Deposit USX
+            Deposit USXD
           </Button>
           <Button
             sx={{
@@ -295,11 +295,11 @@ const DepositWithdrawModal = ({ showDialog, onDismiss, mobile }: Props): JSX.Ele
             }}
             onClick={() => setIsDeposit(!isDeposit)}
           >
-            Withdraw USX
+            Withdraw USXD
           </Button>
         </Flex>
         <Flex sx={{ justifyContent: 'space-between', mb: 2 }}>
-          <Text sx={{ fontWeight: 'semiBold' }}>USX in the VAT</Text>
+          <Text sx={{ fontWeight: 'semiBold' }}>USXD in the VAT</Text>
           <Text>{bigNumToFormat(vatBalance, 'DAI')}</Text>
         </Flex>
         {isDeposit ? (
@@ -323,7 +323,7 @@ const DepositWithdrawModal = ({ showDialog, onDismiss, mobile }: Props): JSX.Ele
               max
             </Button>
             <Button sx={{ width: 180 }} onClick={moveDai} disabled={isTxProcessing || !canDeposit}>
-              {isTxProcessing ? <Spinner size={20} sx={{ color: 'primary' }} /> : 'Deposit USX'}
+              {isTxProcessing ? <Spinner size={20} sx={{ color: 'primary' }} /> : 'Deposit USXD'}
             </Button>
           </Flex>
         ) : (
@@ -354,7 +354,7 @@ const DepositWithdrawModal = ({ showDialog, onDismiss, mobile }: Props): JSX.Ele
               max
             </Button>
             <Button sx={{ width: 180 }} onClick={moveDai} disabled={isTxProcessing || !canWithdraw}>
-              {isTxProcessing ? <Spinner size={20} sx={{ color: 'primary' }} /> : 'Withdraw USX'}
+              {isTxProcessing ? <Spinner size={20} sx={{ color: 'primary' }} /> : 'Withdraw USXD'}
             </Button>
           </Flex>
         )}
@@ -368,7 +368,7 @@ const DepositWithdrawModal = ({ showDialog, onDismiss, mobile }: Props): JSX.Ele
   return (
     <DialogOverlay isOpen={showDialog} onDismiss={onDismiss}>
       <DialogContent
-        aria-label="Deposit or withdraw USX"
+        aria-label="Deposit or withdraw USXD"
         sx={
           mobile
             ? { variant: 'dialog.mobile', animation: `${slideUp} 350ms ease` }
@@ -380,7 +380,7 @@ const DepositWithdrawModal = ({ showDialog, onDismiss, mobile }: Props): JSX.Ele
             <Heading sx={{ fontWeight: 'bold' }}>
               {!hasJoinDaiApproval && !hasJoinDaiHope && !hasAcceptedTerms
                 ? 'Terms of Use'
-                : 'Unlock USX to bid'}
+                : 'Unlock USXD to bid'}
             </Heading>
             <Close
               sx={{

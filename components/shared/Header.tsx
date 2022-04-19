@@ -110,7 +110,7 @@ const Header = (): JSX.Element => {
 
           {address && (
             <Button
-              aria-label="Deposit or Withdraw USX"
+              aria-label="Deposit or Withdraw USXD"
               sx={{
                 variant: 'buttons.card',
                 borderRadius: 'round',

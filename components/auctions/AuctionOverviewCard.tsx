@@ -138,7 +138,7 @@ const AuctionOverviewCard = ({ auction, vatBalance }: Props): JSX.Element => {
               </Text>
             </Flex>
             <Flex sx={{ flexDirection: 'column' }}>
-              <Text sx={{ color: 'textSecondary' }}>{`USX per ${symbol}`}</Text>
+              <Text sx={{ color: 'textSecondary' }}>{`USXD per ${symbol}`}</Text>
               <Text>{bigNumFormatter(unitPrice)}</Text>
             </Flex>
           </Stack>
@@ -152,7 +152,7 @@ const AuctionOverviewCard = ({ auction, vatBalance }: Props): JSX.Element => {
                 sx={{ color: 'primary', fontSize: 1, p: 0 }}
                 onClick={toggleDepositWithdraw}
               >
-                Deposit USX to Bid
+                Deposit USXD to Bid
               </Button>
             )}
             <Flex sx={{ justifyContent: 'space-between' }}>
@@ -163,7 +163,7 @@ const AuctionOverviewCard = ({ auction, vatBalance }: Props): JSX.Element => {
                 >
                   <Text sx={{ color: 'textSecondary' }}>Dust limit</Text>
                 </Tooltip>
-                <Text>{dustLimit.toFormat(2)} USX</Text>
+                <Text>{dustLimit.toFormat(2)} USXD</Text>
               </Flex>
               <Flex sx={{ flexDirection: ['row', 'column'] }}>
                 <Tooltip
@@ -172,7 +172,7 @@ const AuctionOverviewCard = ({ auction, vatBalance }: Props): JSX.Element => {
                 >
                   <Text sx={{ color: 'textSecondary' }}>Auction price</Text>
                 </Tooltip>
-                <Text>{auctionPrice.toFormat(2)} USX</Text>
+                <Text>{auctionPrice.toFormat(2)} USXD</Text>
               </Flex>
             </Flex>
           </Flex>
@@ -245,7 +245,7 @@ const AuctionOverviewCard = ({ auction, vatBalance }: Props): JSX.Element => {
               </ExternalLink>
             </Flex>
             <Flex sx={{ flexDirection: 'column' }}>
-              <Text sx={{ color: 'textSecondary' }}>{`USX per ${symbol}`}</Text>
+              <Text sx={{ color: 'textSecondary' }}>{`USXD per ${symbol}`}</Text>
               <Text>{bigNumFormatter(unitPrice)}</Text>
             </Flex>
           </Grid>
@@ -258,7 +258,7 @@ const AuctionOverviewCard = ({ auction, vatBalance }: Props): JSX.Element => {
               sx={{ color: 'primary', fontSize: 1, p: 0 }}
               onClick={toggleDepositWithdraw}
             >
-              Deposit USX to Bid
+              Deposit USXD to Bid
             </Button>
           )}
           <Flex sx={{ justifyContent: 'space-between' }}>
@@ -269,7 +269,7 @@ const AuctionOverviewCard = ({ auction, vatBalance }: Props): JSX.Element => {
               >
                 <Text sx={{ color: 'textSecondary' }}>Dust limit</Text>
               </Tooltip>
-              <Text>{dustLimit.toFormat(2)} USX</Text>
+              <Text>{dustLimit.toFormat(2)} USXD</Text>
             </Flex>
             <Flex sx={{ flexDirection: 'column' }}>
               <Tooltip
@@ -278,7 +278,7 @@ const AuctionOverviewCard = ({ auction, vatBalance }: Props): JSX.Element => {
               >
                 <Text sx={{ color: 'textSecondary' }}>Auction price</Text>
               </Tooltip>
-              <Text sx={{ textAlign: 'right' }}>{auctionPrice.toFormat(2)} USX</Text>
+              <Text sx={{ textAlign: 'right' }}>{auctionPrice.toFormat(2)} USXD</Text>
             </Flex>
           </Flex>
         </Grid>

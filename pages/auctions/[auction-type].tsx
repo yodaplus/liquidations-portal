@@ -117,7 +117,7 @@ export default function Auctions(): JSX.Element | null {
   return (
     <div>
       <Head>
-        <title>USX Liquidations Portal - Auctions</title>
+        <title>USXD Liquidations Portal - Auctions</title>
       </Head>
 
       {/* full width banner image */}

@@ -34,14 +34,14 @@ export default function SystemStats(): JSX.Element {
     //   tooltip: TOOLTIP_DICT.UNDERCOLLATERALIZED_VAULTS
     // },
     {
-      title: 'USX required for Auctions',
-      format: val => `${getDaiRequiredForAuctions(val).toFormat(0)} USX`,
+      title: 'USXD required for Auctions',
+      format: val => `${getDaiRequiredForAuctions(val).toFormat(0)} USXD`,
       minWidth: 185,
       tooltip: TOOLTIP_DICT.DAI_REQUIRED
     },
     {
       title: 'Global max available',
-      format: val => `${val.toFormat(0)} USX`,
+      format: val => `${val.toFormat(0)} USXD`,
       minWidth: 205,
       tooltip: TOOLTIP_DICT.MAX_AVAILABLE
     }

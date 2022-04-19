@@ -25,7 +25,7 @@ export default function LandingPage(): JSX.Element {
   return (
     <div>
       <Head>
-        <title>USX Liquidations Portal</title>
+        <title>USXD Liquidations Portal</title>
       </Head>
 
       {/* full width banner image */}
@@ -76,7 +76,7 @@ export default function LandingPage(): JSX.Element {
                       py: 3
                     }}
                   >
-                    To participate in collateral auctions, first you need to deposit USX in the VAT
+                    To participate in collateral auctions, first you need to deposit USXD in the VAT
                   </Text>
                   <Flex
                     sx={{ flexDirection: ['column', 'row'], justifyContent: 'center', alignItems: 'center' }}
@@ -103,7 +103,7 @@ export default function LandingPage(): JSX.Element {
                           }
                         }}
                       >
-                        <Text sx={{ fontSize: 3, fontWeight: 'normal' }}>Deposit USX to start bidding</Text>
+                        <Text sx={{ fontSize: 3, fontWeight: 'normal' }}>Deposit USXD to start bidding</Text>
                         <Icon name="chevron_right" color="surface" size="3" ml="3" />
                       </Button>
                     )}

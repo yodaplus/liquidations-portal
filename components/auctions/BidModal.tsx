@@ -112,12 +112,12 @@ const BidModal = ({
       <Flex sx={{ flexDirection: 'column' }}>
         <Flex sx={{ justifyContent: 'space-between', my: 3 }}>
           <Tooltip sx={{ padding: 3, maxWidth: 360, whiteSpace: 'normal' }} label={TOOLTIP_DICT.DAI_IN_VAT}>
-            <Text sx={{ fontWeight: 'semiBold' }}>USX in the VAT</Text>
+            <Text sx={{ fontWeight: 'semiBold' }}>USXD in the VAT</Text>
           </Tooltip>
           <Text>{bigNumToFormat(vatBalance, 'DAI')}</Text>
         </Flex>
         <Button variant="outline" onClick={handleDepositMore} sx={{ mb: 4 }}>
-          Deposit more USX in the VAT
+          Deposit more USXD in the VAT
         </Button>
         <Button
           onClick={() => enableIlkHope(ilk)}
@@ -126,15 +126,15 @@ const BidModal = ({
           disabled={ilkHopePending}
         >
           {!ilkHopePending ? (
-            `Authorize USX in ${ilk} Auctions`
+            `Authorize USXD in ${ilk} Auctions`
           ) : (
             <Flex sx={{ justifyContent: 'center', alignItems: 'center' }}>
-              Authorizing USX in {ilk} Auctions <Spinner size={20} ml={2} />
+              Authorizing USXD in {ilk} Auctions <Spinner size={20} ml={2} />
             </Flex>
           )}
         </Button>
         <Text sx={{ color: 'textSecondary', textAlign: 'center' }}>
-          To start bidding you need to authorize USX in {ilk} Auctions
+          To start bidding you need to authorize USXD in {ilk} Auctions
         </Text>
       </Flex>
     );
@@ -242,7 +242,7 @@ const BidModal = ({
               <>
                 <Flex sx={{ flexDirection: 'column', mb: 2 }}>
                   <Flex sx={{ justifyContent: 'space-between', alignItems: 'flex-end', mb: 2 }}>
-                    <Text sx={{ fontWeight: 'semiBold', fontSize: 3 }}>USX you pay</Text>
+                    <Text sx={{ fontWeight: 'semiBold', fontSize: 3 }}>USXD you pay</Text>
                     <Flex sx={{ flexDirection: 'column', alignItems: 'flex-end' }}>
                       <Button
                         variant="textual"
@@ -256,7 +256,7 @@ const BidModal = ({
                           sx={{ padding: 3, maxWidth: 360, whiteSpace: 'normal' }}
                           label={TOOLTIP_DICT.DAI_IN_VAT}
                         >
-                          <Text sx={{ fontSize: 2, color: 'textSecondary' }}>USX in the VAT:</Text>
+                          <Text sx={{ fontSize: 2, color: 'textSecondary' }}>USXD in the VAT:</Text>
                         </Tooltip>
                         <Text sx={{ ml: 2 }}>{bigNumToFormat(vatBalance, 'DAI')}</Text>
                       </Flex>
@@ -304,7 +304,7 @@ const BidModal = ({
                       </Button>
                       <Flex sx={{ alignItems: 'center', ml: 1 }}>
                         <Icon size={30} name="usx" />
-                        <Text sx={{ fontSize: 3, fontWeight: 'semiBold', ml: 2 }}>USX</Text>
+                        <Text sx={{ fontSize: 3, fontWeight: 'semiBold', ml: 2 }}>USXD</Text>
                       </Flex>
                     </Flex>
                   </Flex>
@@ -316,7 +316,7 @@ const BidModal = ({
                       >
                         <Text sx={{ color: 'textSecondary', fontSize: 2 }}>Dust limit</Text>
                       </Tooltip>
-                      <Text sx={{ color: 'textMuted', fontSize: 2 }}>{dustLimit.toFormat(2)} USX</Text>
+                      <Text sx={{ color: 'textMuted', fontSize: 2 }}>{dustLimit.toFormat(2)} USXD</Text>
                     </Flex>
                     <Flex sx={{ flexDirection: 'column' }}>
                       <Tooltip
@@ -326,7 +326,7 @@ const BidModal = ({
                         <Text sx={{ color: 'textSecondary', fontSize: 2 }}>Auction price</Text>
                       </Tooltip>
                       <Text sx={{ color: 'textMuted', fontSize: 2, textAlign: 'right' }}>
-                        {auctionPrice.toFormat(2)} USX
+                        {auctionPrice.toFormat(2)} USXD
                       </Text>
                     </Flex>
                   </Flex>
@@ -348,7 +348,7 @@ const BidModal = ({
                     <Text sx={{ fontSize: 2, color: 'textMuted' }}>{`≈ ${bigNumToFormat(
                       unitPrice,
                       ilk
-                    )} USX per ${symbol}`}</Text>
+                    )} USXD per ${symbol}`}</Text>
                   </Flex>
                 </Flex>
                 <Button
@@ -363,9 +363,9 @@ const BidModal = ({
                 {(insufficientFunds || dustLimitExceeded) && (
                   <Text sx={{ color: 'onWarning', textAlign: 'center', mt: 2 }}>
                     {dustLimitExceeded
-                      ? `Please bid the full amount or any amount lower than ${dustLimitAllowance} USX. It is not permitted to leave less than the dust limit of ${dustLimit.toFormat(
+                      ? `Please bid the full amount or any amount lower than ${dustLimitAllowance} USXD. It is not permitted to leave less than the dust limit of ${dustLimit.toFormat(
                           2
-                        )} USX in the auction.`
+                        )} USXD in the auction.`
                       : 'Insufficient funds'}
                   </Text>
                 )}

@@ -34,9 +34,9 @@ type CollateralInfo = {
 };
 
 export const COLLATERAL_MAP: Record<string, CollateralInfo> = {
-  'ETH-C': {
+  'ETH-A': {
     name: 'Ether',
-    ilk: 'ETH-C',
+    ilk: 'ETH-A',
     symbol: 'ETH',
     bigNumFormatter: (val: BigNumber): string => val.toFormat(6),
     cardTexturePng: '/assets/eth-card-texture.png',
@@ -89,10 +89,10 @@ export const TOOLTIP_DICT = {
   ACTIVE_AUCTIONS: 'The number of active auctions in which you can place a bid.',
   INACTIVE_AUCTIONS: 'The number of auctions that ended in which you can no longer place a bid.',
   UNDERCOLLATERALIZED_VAULTS: 'The number of undercollateralized vaults that need to be initiated.',
-  DAI_REQUIRED: 'The amount of USX required to purchase available auction collateral',
-  MAX_AVAILABLE: 'Max amount of USX that can be auctioned.',
+  DAI_REQUIRED: 'The amount of USXD required to purchase available auction collateral',
+  MAX_AVAILABLE: 'Max amount of USXD that can be auctioned.',
   DAI_IN_VAT:
-    'The VAT contract is the core vault engine of the Maker Protocol and manages USX accounting. Depositing USX into this contract and approving permissions is necessary in order to participate in auctions.',
+    'The VAT contract is the core vault engine of the Maker Protocol and manages USXD accounting. Depositing USXD into this contract and approving permissions is necessary in order to participate in auctions.',
   DUST_LIMIT: 'Minimum vault debt.',
   AUCTION_PRICE: 'The maximum acceptable price.'
 };

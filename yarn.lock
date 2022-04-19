@@ -3581,20 +3581,20 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
-"@yodaplus/dai-plugin-liquidations@^0.3.8":
-  version "0.3.8"
-  resolved "https://registry.yarnpkg.com/@yodaplus/dai-plugin-liquidations/-/dai-plugin-liquidations-0.3.8.tgz#f1bede1fb5b114e83f373a6699c1a30dfa4d7197"
-  integrity sha512-122AlI5JGxqu58kkTGKtEPVD38tM77xCn7GJxn4ZfiSWpI5QCDgmo4v+qIEEDgvQrsNLyedl2MuVxIs3bzSuWA==
+"@yodaplus/dai-plugin-liquidations@^0.3.9":
+  version "0.3.9"
+  resolved "https://registry.yarnpkg.com/@yodaplus/dai-plugin-liquidations/-/dai-plugin-liquidations-0.3.9.tgz#d4984daadc2d6b7d80a5a12b246c05c346e7788a"
+  integrity sha512-JGhDCDpEriNbYDUZnezENuz0+dVw59h++eFMfMRtRDWbDJs0eLKfb6v/EHn97nwoemL8Xgm9n0JkiA+8Megezg==
   dependencies:
     "@makerdao/currency" "^0.9.10"
     "@yodaplus/services-core" "^0.11.4"
     bignumber.js "^8.1.1"
     ramda "^0.27.1"
 
-"@yodaplus/dai-plugin-mcd@^1.8.9":
-  version "1.8.9"
-  resolved "https://registry.yarnpkg.com/@yodaplus/dai-plugin-mcd/-/dai-plugin-mcd-1.8.9.tgz#f5fd65615ba40421736e1fbfc4924999153b344d"
-  integrity sha512-do03g0SUdUjRzlUZ0XVhrLe5YnTdlP2aT/RfWGEIXNnbIHoMCfPLiTdx7b9z3UyBb9BnJjVLbVSYpbwrM/pF7w==
+"@yodaplus/dai-plugin-mcd@^1.8.10":
+  version "1.8.10"
+  resolved "https://registry.yarnpkg.com/@yodaplus/dai-plugin-mcd/-/dai-plugin-mcd-1.8.10.tgz#67afed7802fa69f643a2bff884c70244102cb2c2"
+  integrity sha512-T441a12n7q6CKWgOb6qRnxl7bl595ai5FOKoLd2X3Ywd0J2Z3Zss1I5ZOSBu1Fffmo/21hUfzaa/Sj0FT8/hYQ==
   dependencies:
     "@makerdao/currency" "^0.9.10"
     "@yodaplus/dai" "^0.42.6"
