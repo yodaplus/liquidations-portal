@@ -20,6 +20,8 @@ function chainIdToNetworkName(chainId: number): SupportedNetworks {
       return SupportedNetworks.GOERLI;
     case 42:
       return SupportedNetworks.KOVAN;
+    case 50:
+      return SupportedNetworks.XINFIN_MAINNET;
     case 51:
       return SupportedNetworks.APOTHEM;
     case 999:
@@ -43,8 +45,8 @@ function determineNetwork(): SupportedNetworks {
   } else {
     // otherwise, to determine the network...
     // 1) check the URL
-    if (window.location.search.includes('mainnet')) {
-      return SupportedNetworks.MAINNET;
+    if (window.location.search.includes('xinfin-mainnet')) {
+      return SupportedNetworks.XINFIN_MAINNET;
     } else if (window.location.search.includes('goerli')) {
       return SupportedNetworks.GOERLI;
     } else if (window.location.search.includes('kovan')) {
