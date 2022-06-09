@@ -19,7 +19,7 @@ export function networkToRpc(network: SupportedNetworks, nodeProvider?: 'infura'
     case SupportedNetworks.APOTHEM:
       return 'https://rpc-apothem.xinfin.yodaplus.net';
     case SupportedNetworks.XINFIN_MAINNET:
-      return 'https://rpc-apothem.xinfin.yodaplus.net';
+      return 'https://rpc.xinfin.yodaplus.net';
     default:
       if (nodeProvider === 'alchemy') {
         return `https://eth-mainnet.alchemyapi.io/v2/${process.env.ALCHEMY_KEY}`;

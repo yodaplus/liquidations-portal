@@ -47,6 +47,8 @@ function determineNetwork(): SupportedNetworks {
     // 1) check the URL
     if (window.location.search.includes('xinfin-mainnet')) {
       return SupportedNetworks.XINFIN_MAINNET;
+    } else if (window.location.search.includes('apothem')) {
+      return SupportedNetworks.APOTHEM;
     } else if (window.location.search.includes('goerli')) {
       return SupportedNetworks.GOERLI;
     } else if (window.location.search.includes('kovan')) {

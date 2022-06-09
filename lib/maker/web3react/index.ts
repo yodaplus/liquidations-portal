@@ -26,16 +26,16 @@ export const injectedConnector = new InjectedConnector({
 });
 
 export const connectors: Array<[ConnectorName, AbstractConnector]> = [
-  ['XDCPay', injectedConnector]
-  // [
-  //   'WalletConnect',
-  //   new WalletConnectConnector({
-  //     rpc: {
-  //       50: networkToRpc(SupportedNetworks.XINFIN_MAINNET)
-  //     },
-  //     bridge: 'https://bridge.walletconnect.org',
-  //     qrcode: true,
-  //     pollingInterval: POLLING_INTERVAL
-  //   })
-  // ]
+  ['XDCPay', injectedConnector],
+  [
+    'WalletConnect',
+    new WalletConnectConnector({
+      rpc: {
+        50: networkToRpc(SupportedNetworks.XINFIN_MAINNET)
+      },
+      bridge: 'https://bridge.walletconnect.org',
+      qrcode: true,
+      pollingInterval: POLLING_INTERVAL
+    })
+  ]
 ];
