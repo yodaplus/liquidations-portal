@@ -14,12 +14,6 @@ export const USD = Maker.currencies.USD;
 
 function chainIdToNetworkName(chainId: number): SupportedNetworks {
   switch (chainId) {
-    case 1:
-      return SupportedNetworks.MAINNET;
-    case 5:
-      return SupportedNetworks.GOERLI;
-    case 42:
-      return SupportedNetworks.KOVAN;
     case 50:
       return SupportedNetworks.XINFIN_MAINNET;
     case 51:
@@ -49,10 +43,6 @@ function determineNetwork(): SupportedNetworks {
       return SupportedNetworks.XINFIN_MAINNET;
     } else if (window.location.search.includes('apothem')) {
       return SupportedNetworks.APOTHEM;
-    } else if (window.location.search.includes('goerli')) {
-      return SupportedNetworks.GOERLI;
-    } else if (window.location.search.includes('kovan')) {
-      return SupportedNetworks.KOVAN;
     } else if (window.location.search.includes('testnet')) {
       return SupportedNetworks.TESTNET;
     }

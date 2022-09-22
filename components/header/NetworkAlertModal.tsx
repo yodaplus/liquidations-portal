@@ -73,8 +73,7 @@ const NetworkAlertModal = ({
 
             <Text sx={{ mt: 3 }}>
               Your wallet is connected to an unsupported network, please switch it to{' '}
-              {SupportedNetworks.MAINNET}, {SupportedNetworks.KOVAN}, or {SupportedNetworks.GOERLI} to
-              continue.
+              {SupportedNetworks.XINFIN_MAINNET} or {SupportedNetworks.APOTHEM} to continue.
             </Text>
           </Flex>
         </DialogContent>

@@ -1,9 +1,6 @@
 import BigNumber from 'bignumber.js';
 
 export enum SupportedNetworks {
-  MAINNET = 'mainnet',
-  GOERLI = 'goerli',
-  KOVAN = 'kovan',
   TESTNET = 'testnet',
   APOTHEM = 'apothem',
   XINFIN_MAINNET = 'xinfin-mainnet'
