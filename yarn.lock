@@ -3282,6 +3282,27 @@
   dependencies:
     eslint-visitor-keys "^1.1.0"
 
+"@usxd/dai-plugin-liquidations@^0.9.1-alpha.0":
+  version "0.9.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@usxd/dai-plugin-liquidations/-/dai-plugin-liquidations-0.9.1-alpha.0.tgz#8de8121c104b0925366767ada59f9b253dbfd5e8"
+  integrity sha512-Ud2JRODJPII7QRmm8DAMkbE6uRcP9rvqiYGBez+CEVwLpTtfspMwk2EDUgqHmg2ljB0cECfP1fraK4aFfHtvMQ==
+  dependencies:
+    "@makerdao/currency" "^0.9.10"
+    "@yodaplus/services-core" "^0.11.4"
+    bignumber.js "^8.1.1"
+    ramda "^0.27.1"
+
+"@usxd/dai-plugin-mcd@^0.9.1-alpha.0":
+  version "0.9.1-alpha.0"
+  resolved "https://registry.yarnpkg.com/@usxd/dai-plugin-mcd/-/dai-plugin-mcd-0.9.1-alpha.0.tgz#d15c472cadf1d209a3d386fd130219fcb52d507f"
+  integrity sha512-IZQBETFxhRebBTX7xlBxqllZQsA+DD5U+iTqXCarjYfoIim09rrRa6bFYOxdy58MqloTdOjlb4Da4ExQbkkmGg==
+  dependencies:
+    "@makerdao/currency" "^0.9.10"
+    "@yodaplus/dai" "^0.42.7"
+    "@yodaplus/services-core" "^0.11.4"
+    bignumber.js "^8.1.1"
+    rxjs "^6.5.4"
+
 "@walletconnect/client@^1.3.1":
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/@walletconnect/client/-/client-1.3.1.tgz#5b8160fe15615ca7017a6be1b125d885e39ddf12"
@@ -3580,27 +3601,6 @@
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
-
-"@yodaplus/dai-plugin-liquidations@^0.3.10":
-  version "0.3.10"
-  resolved "https://registry.yarnpkg.com/@yodaplus/dai-plugin-liquidations/-/dai-plugin-liquidations-0.3.10.tgz#d40e2003d89c89f4703cd4798c0724f6e02fcfc0"
-  integrity sha512-2K7FwDgwJD+MWwToZGXRjkd6tw4VqNGq4Zi8IUKj038BFNxybvVW9Cf66zrYZ6Ktc9VfzUGWbdBgbNQpUyFLzQ==
-  dependencies:
-    "@makerdao/currency" "^0.9.10"
-    "@yodaplus/services-core" "^0.11.4"
-    bignumber.js "^8.1.1"
-    ramda "^0.27.1"
-
-"@yodaplus/dai-plugin-mcd@^1.8.12":
-  version "1.8.12"
-  resolved "https://registry.yarnpkg.com/@yodaplus/dai-plugin-mcd/-/dai-plugin-mcd-1.8.12.tgz#a354e82db892f954875193d89ce40a33d79f02f9"
-  integrity sha512-hNR5SAIe9GDGMJm9E193VVK/HnQDsRbUNxF6WRGzbjDI2OyuX9i1t3pEuv+aWRFu/yib7QwKKdxQOJv7O3MMDA==
-  dependencies:
-    "@makerdao/currency" "^0.9.10"
-    "@yodaplus/dai" "^0.42.7"
-    "@yodaplus/services-core" "^0.11.4"
-    bignumber.js "^8.1.1"
-    rxjs "^6.5.4"
 
 "@yodaplus/dai@^0.42.7":
   version "0.42.7"
@@ -14163,7 +14163,7 @@ web3-net@1.6.1:
     web3-core-method "1.6.1"
     web3-utils "1.6.1"
 
-web3-provider-engine@14.0.4, "web3-provider-engine@github:makerdao/provider-engine#kovan-fix-dist":
+web3-provider-engine@14.0.4, web3-provider-engine@makerdao/provider-engine#kovan-fix-dist:
   version "14.0.4"
   resolved "https://codeload.github.com/makerdao/provider-engine/tar.gz/7c4b187809f156409473246de15dc595e1fe3356"
   dependencies:
