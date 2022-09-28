@@ -5,7 +5,7 @@ import { useBreakpointIndex } from '@theme-ui/match-media';
 import { jsx, Box, Flex, Text, Spinner, Button, Close, ThemeUICSSObject } from 'theme-ui';
 import { Icon } from '@makerdao/dai-ui-icons';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
-import mixpanel from 'mixpanel-browser';
+//import mixpanel from 'mixpanel-browser';
 
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector';
 import { useWeb3React, Web3ReactProvider, UnsupportedChainIdError } from '@web3-react/core';
@@ -83,9 +83,8 @@ const AccountSelect = props => {
   const [addresses, setAddresses] = React.useState<string[]>([]);
 
   const [showHwAddressSelector, setShowHwAddressSelector] = React.useState(false);
-  const [hwSelectCallback, setHwSelectCallback] = React.useState<
-    (err: Error | null, address?: string) => void
-  >();
+  const [hwSelectCallback, setHwSelectCallback] =
+    React.useState<(err: Error | null, address?: string) => void>();
 
   const open = () => setShowDialog(true);
   const close = () => setShowDialog(false);
@@ -119,7 +118,7 @@ const AccountSelect = props => {
         key={name}
         onClick={() => {
           activate(connector).then(() => {
-            if (chainId) mixpanel.people.set({ wallet: name });
+            //if (chainId) mixpanel.people.set({ wallet: name });
             setAccountName(name);
             setChangeWallet(false);
           });

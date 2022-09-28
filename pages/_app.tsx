@@ -5,14 +5,14 @@ import { useRouter } from 'next/router';
 import { SWRConfig } from 'swr';
 import { ThemeProvider, Flex } from 'theme-ui';
 import { Global } from '@emotion/core';
-import mixpanel from 'mixpanel-browser';
+//import mixpanel from 'mixpanel-browser';
 import debug from 'debug';
 import { Web3ReactProvider } from '@web3-react/core';
 
 import '@reach/dialog/styles.css';
 import '@reach/tooltip/styles.css';
 
-import { mixpanelInit } from 'lib/analytics';
+//import { mixpanelInit } from 'lib/analytics';
 import { fetchJson } from 'lib/utils';
 import theme from 'lib/theme';
 import { getLibrary } from 'lib/maker/web3react';
@@ -26,17 +26,17 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   const dev = process.env.NODE_ENV === 'development';
   const router = useRouter();
   useEffect(() => {
-    mixpanelInit();
-    const handleRouteChange = url => {
-      mixpanel.track('route-change', {
-        id: url,
-        product: 'liquidations-portal'
-      });
-    };
-    router.events.on('routeChangeStart', handleRouteChange);
-    return () => {
-      router.events.off('routeChangeStart', handleRouteChange);
-    };
+    // mixpanelInit();
+    // const handleRouteChange = url => {
+    //   mixpanel.track('route-change', {
+    //     id: url,
+    //     product: 'liquidations-portal'
+    //   });
+    // };
+    // router.events.on('routeChangeStart', handleRouteChange);
+    // return () => {
+    //   router.events.off('routeChangeStart', handleRouteChange);
+    // };
   }, []);
   return (
     <ThemeProvider theme={theme}>

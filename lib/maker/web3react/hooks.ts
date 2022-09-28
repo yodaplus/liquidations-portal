@@ -4,7 +4,7 @@
 // by handling Web3ReactDeactivate event
 
 import { useEffect, useState } from 'react';
-import mixpanel from 'mixpanel-browser';
+//import mixpanel from 'mixpanel-browser';
 import { useWeb3React } from '@web3-react/core';
 
 import getMaker from '../../maker';
@@ -14,7 +14,7 @@ export const syncMakerAccount = (library, account, chainIdError) => {
   useEffect(() => {
     (async () => {
       if (!library || !account || !!chainIdError) return;
-      mixpanel.identify(account);
+      //mixpanel.identify(account);
       // check to see if the account already exists (i.e. switching back to one that was already added)
       // before adding it
       const maker = await getMaker();
