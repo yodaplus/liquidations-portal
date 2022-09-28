@@ -1,4 +1,4 @@
-import { DAI } from '@makerdao/dai-plugin-mcd';
+import { DAI } from '@usxd/dai-plugin-mcd';
 import BigNumber from 'bignumber.js';
 import {
   getGlobalMax,

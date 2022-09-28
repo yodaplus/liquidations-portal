@@ -1,8 +1,8 @@
 import Maker from '@yodaplus/dai';
-import McdPlugin from '@yodaplus/dai-plugin-mcd';
+import McdPlugin from '@usxd/dai-plugin-mcd';
 import LedgerPlugin from '@makerdao/dai-plugin-ledger-web';
 import TrezorPlugin from '@makerdao/dai-plugin-trezor-web';
-import LiquidationPlugin from '@yodaplus/dai-plugin-liquidations';
+import LiquidationPlugin from '@usxd/dai-plugin-liquidations';
 
 import { networkToRpc } from '../../../lib/maker/network';
 import { SupportedNetworks } from '../../../lib/constants';

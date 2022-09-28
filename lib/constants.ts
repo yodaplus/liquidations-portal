@@ -31,17 +31,17 @@ type CollateralInfo = {
 };
 
 export const COLLATERAL_MAP: Record<string, CollateralInfo> = {
-  'ETH-A': {
-    name: 'Ether',
-    ilk: 'ETH-A',
-    symbol: 'ETH',
-    bigNumFormatter: (val: BigNumber): string => val.toFormat(6),
-    cardTexturePng: '/assets/eth-card-texture.png',
-    bannerPng: '/assets/eth-banner-texture.png',
-    iconSvg: '/assets/eth-icon.svg',
-    colorIconName: 'ethCircleColor',
-    decimals: 18
-  },
+  // 'ETH-A': {
+  //   name: 'Ether',
+  //   ilk: 'ETH-A',
+  //   symbol: 'ETH',
+  //   bigNumFormatter: (val: BigNumber): string => val.toFormat(6),
+  //   cardTexturePng: '/assets/eth-card-texture.png',
+  //   bannerPng: '/assets/eth-banner-texture.png',
+  //   iconSvg: '/assets/eth-icon.svg',
+  //   colorIconName: 'ethCircleColor',
+  //   decimals: 18
+  // },
   'XDC-A': {
     name: 'XDC',
     ilk: 'XDC-A',
