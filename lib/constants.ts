@@ -6,7 +6,7 @@ export enum SupportedNetworks {
   XINFIN_MAINNET = 'xinfin-mainnet'
 }
 
-export const DEFAULT_NETWORK = SupportedNetworks.XINFIN_MAINNET;
+export const DEFAULT_NETWORK = SupportedNetworks.APOTHEM;
 
 export const ETHERSCAN_PREFIXES = {
   [SupportedNetworks.XINFIN_MAINNET]: 'xdc.',
